@@ -1,0 +1,12 @@
+// ISkeleton.h: ISkeleton interface.
+//
+//////////////////////////////////////////////////////////////////////
+
+#ifndef ISKELETON_H
+#define ISKELETON_H
+
+class ISkeleton
+{
+};
+
+#endif

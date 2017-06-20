@@ -1,0 +1,12 @@
+// ISequence.h: ISequence interface.
+//
+//////////////////////////////////////////////////////////////////////
+
+#ifndef ISEQUENCE_H
+#define ISEQUENCE_H
+
+class ISequence
+{
+};
+
+#endif
