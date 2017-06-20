@@ -1,0 +1,3 @@
+[submodule "ControlLib"]
+	path = ControlLib
+	url = https://github.com/wtrsltnk/ControlLib.git
