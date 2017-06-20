@@ -46,11 +46,11 @@ ToolManager::~ToolManager()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-int ToolManager::GetToolIndex(char* tool)
+int ToolManager::GetToolIndex(const char* tool)
 {
 	for (int i = 0; i < this->tools.Size(); i++)
 	{
-		char* name = this->tools.Get(i)->GetName();
+        const char* name = this->tools.Get(i)->GetName();
 		if (strcmp(name, tool) ==0)
 		{
 			return i;
@@ -64,7 +64,7 @@ int ToolManager::GetToolIndex(char* tool)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-Tool* ToolManager::GetTool(char* tool)
+Tool* ToolManager::GetTool(const char* tool)
 {
 	int index = GetToolIndex(tool);
 	
@@ -125,7 +125,7 @@ int ToolManager::AddTool(Tool* tool)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-Tool* ToolManager::SetCurrentTool(char* name)
+Tool* ToolManager::SetCurrentTool(const char* name)
 {
 	Tool* tool = GetTool(name);
 	if (this->toolArgs && this->toolBoxContainer && tool)

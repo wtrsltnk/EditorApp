@@ -73,7 +73,7 @@ void Bone::Parent(int parent)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-char* Bone::Name()
+const char* Bone::Name()
 {
 	return this->name;
 }
@@ -83,7 +83,7 @@ char* Bone::Name()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void Bone::Name(char* name)
+void Bone::Name(const char* name)
 {
 	strcpy(this->name, name);
 }

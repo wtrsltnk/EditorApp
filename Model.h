@@ -26,11 +26,11 @@ private:
 
 	void SetupJoints();
 public:
-	Model(char* name);
+    Model(const char* name);
 	virtual ~Model();
 
-	char* Name();
-	void Name(char* name);
+    const char* Name();
+    void Name(const char* name);
 
 	int GetFrameCount();
 	int GetCurrentFrame();
@@ -41,14 +41,14 @@ public:
 	Skeleton* GetSkeleton();
 
 	void AddMeshGroup(MeshGroup* meshgroup);
-	bool RemoveMeshGroup(char* meshgroup);
-	MeshGroup* GetMeshGroup(char* meshgroup);
-	int GetMeshGroupIndex(char* meshgroup);
+    bool RemoveMeshGroup(const char* meshgroup);
+    MeshGroup* GetMeshGroup(const char* meshgroup);
+    int GetMeshGroupIndex(const char* meshgroup);
 
 	void AddSequence(Sequence* seq);
-	bool RemoveSequence(char* seq);
-	Sequence* GetSequence(char* seq);
-	int GetSequenceIndex(char* seq);
+    bool RemoveSequence(const char* seq);
+    Sequence* GetSequence(const char* seq);
+    int GetSequenceIndex(const char* seq);
 
 	int GetMeshGroupCount();
 	MeshGroup* GetMeshGroup(int index);
@@ -57,7 +57,7 @@ public:
 	Sequence* GetSequence(int index);
 
 	void SetCurrentSequence(int index);
-	void SetCurrentSequence(char* seq);
+    void SetCurrentSequence(const char* seq);
 	Sequence* GetCurrentSequence();
 
 	bool IsReady();

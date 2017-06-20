@@ -30,7 +30,7 @@ public:
 
 	bool Load(ToolArgs* args);
 	bool Unload();
-	char* GetName();
+    const char* GetName();
 	CWToolBox* GetPropertieBox();
 };
 

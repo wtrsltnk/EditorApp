@@ -1,3 +1,6 @@
+#ifndef RESOURCE_H
+#define RESOURCE_H
+
 //{{NO_DEPENDENCIES}}
 // Microsoft Developer Studio generated include file.
 // Used by resource.rc
@@ -29,3 +32,5 @@
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
+
+#endif // RESOURCE_H

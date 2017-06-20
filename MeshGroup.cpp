@@ -9,7 +9,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-MeshGroup::MeshGroup(char* name)
+MeshGroup::MeshGroup(const char* name)
 {
 	Name(name);
 	this->currentMesh = 0;
@@ -38,7 +38,7 @@ void MeshGroup::ClearMeshes()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-char* MeshGroup::Name()
+const char* MeshGroup::Name()
 {
 	return this->name;
 }
@@ -48,7 +48,7 @@ char* MeshGroup::Name()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void MeshGroup::Name(char* name)
+void MeshGroup::Name(const char* name)
 {
 	strcpy(this->name, name);
 }
@@ -69,7 +69,7 @@ void MeshGroup::AddMesh(Mesh* mesh)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-bool MeshGroup::RemoveMesh(char* mesh)
+bool MeshGroup::RemoveMesh(const char* mesh)
 {
 	int i = GetMeshIndex(mesh);
 	
@@ -85,7 +85,7 @@ bool MeshGroup::RemoveMesh(char* mesh)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-Mesh* MeshGroup::GetMesh(char* mesh)
+Mesh* MeshGroup::GetMesh(const char* mesh)
 {
 	int i = GetMeshIndex(mesh);
 
@@ -100,7 +100,7 @@ Mesh* MeshGroup::GetMesh(char* mesh)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-int MeshGroup::GetMeshIndex(char* mesh)
+int MeshGroup::GetMeshIndex(const char* mesh)
 {
 	if (mesh)
 	{
@@ -153,7 +153,7 @@ void MeshGroup::SetCurrentMesh(int index)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void MeshGroup::SetCurrentMesh(char* mesh)
+void MeshGroup::SetCurrentMesh(const char* mesh)
 {
 	int index = GetMeshIndex(mesh);
 	if (index >= 0)

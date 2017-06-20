@@ -122,7 +122,7 @@ bool SelectionTool::Unload()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-char* SelectionTool::GetName()
+const char* SelectionTool::GetName()
 {
 	return SELECTION_TOOL;
 }

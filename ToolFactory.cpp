@@ -16,7 +16,7 @@ ToolFactory::~ToolFactory()
 {
 }
 
-Tool* ToolFactory::CreateTool(char* name)
+Tool* ToolFactory::CreateTool(const char* name)
 {
 	if (strcmp(name, SELECTION_TOOL) == 0)
 	{

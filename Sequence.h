@@ -18,11 +18,11 @@ private:
 	void ClearMotions();
 
 public:
-	Sequence(char* name);
+    Sequence(const char* name);
 	virtual ~Sequence();
 
-	char* Name();
-	void Name(char* name);
+    const char* Name();
+    void Name(const char* name);
 
 	void SetupMotions();
 

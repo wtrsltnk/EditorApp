@@ -9,7 +9,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-Model::Model(char* name)
+Model::Model(const char* name)
 {
 	Name(name);
 	this->currentSequence = 0;
@@ -83,7 +83,7 @@ void Model::SetupJoints()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-char* Model::Name()
+const char* Model::Name()
 {
 	return this->name;
 }
@@ -93,7 +93,7 @@ char* Model::Name()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void Model::Name(char* name)
+void Model::Name(const char* name)
 {
 	strcpy(this->name, name);
 }
@@ -171,7 +171,7 @@ void Model::AddMeshGroup(MeshGroup* meshgroup)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-bool Model::RemoveMeshGroup(char* meshgroup)
+bool Model::RemoveMeshGroup(const char* meshgroup)
 {
 	int i = GetMeshGroupIndex(meshgroup);
 	
@@ -187,7 +187,7 @@ bool Model::RemoveMeshGroup(char* meshgroup)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-MeshGroup* Model::GetMeshGroup(char* meshgroup)
+MeshGroup* Model::GetMeshGroup(const char* meshgroup)
 {
 	int i = GetMeshGroupIndex(meshgroup);
 
@@ -202,7 +202,7 @@ MeshGroup* Model::GetMeshGroup(char* meshgroup)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-int Model::GetMeshGroupIndex(char* meshgroup)
+int Model::GetMeshGroupIndex(const char* meshgroup)
 {
 	if (meshgroup)
 	{
@@ -233,7 +233,7 @@ void Model::AddSequence(Sequence* seq)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-bool Model::RemoveSequence(char* seq)
+bool Model::RemoveSequence(const char* seq)
 {
 	int i = GetSequenceIndex(seq);
 	
@@ -249,7 +249,7 @@ bool Model::RemoveSequence(char* seq)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-Sequence* Model::GetSequence(char* seq)
+Sequence* Model::GetSequence(const char* seq)
 {
 	int i = GetSequenceIndex(seq);
 
@@ -264,7 +264,7 @@ Sequence* Model::GetSequence(char* seq)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-int Model::GetSequenceIndex(char* seq)
+int Model::GetSequenceIndex(const char* seq)
 {
 	if (seq)
 	{
@@ -337,7 +337,7 @@ void Model::SetCurrentSequence(int index)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void Model::SetCurrentSequence(char* seq)
+void Model::SetCurrentSequence(const char* seq)
 {
 	if (int index = GetSequence(seq) >= 0)
 		this->currentSequence = this->sequences[index];

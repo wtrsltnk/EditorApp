@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.7)
 
 project(EditorApp)
 
-add_subdirectory(MathLib)
-
 add_library(Engine
     Engine/AnimationObject.h
     Engine/Camera.cpp
@@ -12,7 +10,7 @@ add_library(Engine
     Engine/Camera2D.h
     Engine/Camera3D.cpp
     Engine/Camera3D.h
-    Engine/DLLMain.cpp
+#    Engine/DLLMain.cpp
     Engine/Engine.cpp
     Engine/Engine.dsp
     Engine/Engine.h
@@ -28,8 +26,14 @@ add_library(Engine
     Engine/SelectionObject.h
     )
 
+add_subdirectory(MathLib)
+
 target_include_directories(Engine
     PRIVATE MathLib
+    )
+
+target_link_libraries(Engine
+    MathLib
     )
 
 set(SRC_APP
@@ -106,8 +110,12 @@ add_executable(EditorApp
     ${SRC_APP}
     )
 
+add_subdirectory(ControlLib)
+
 target_include_directories(EditorApp
+    PRIVATE Engine
     PRIVATE MathLib
+    PRIVATE ControlLib/package/include
     )
 
 target_compile_features(EditorApp
@@ -119,4 +127,5 @@ target_compile_features(EditorApp
 target_link_libraries(EditorApp
     Engine
     MathLib
+    Controls
     )

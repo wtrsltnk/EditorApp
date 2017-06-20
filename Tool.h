@@ -29,7 +29,7 @@ public:
 
 	virtual bool Load(ToolArgs* args) = 0;
 	virtual bool Unload() = 0;
-	virtual char* GetName() = 0;
+    virtual const char* GetName() = 0;
 	virtual CWToolBox* GetPropertieBox() = 0;
 };
 

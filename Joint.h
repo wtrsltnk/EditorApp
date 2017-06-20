@@ -37,8 +37,8 @@ public:
 	int Parent();
 	void Parent(int parent);
 
-	char* Name();
-	void Name(char* name);
+    const char* Name();
+    void Name(const char* name);
 
 	void Position(float position[3]);
 	void Position(float x, float y, float z);

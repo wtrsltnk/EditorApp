@@ -82,7 +82,7 @@ void Joint::Parent(int parent)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-char* Joint::Name()
+const char* Joint::Name()
 {
 	return this->name;
 }
@@ -92,7 +92,7 @@ char* Joint::Name()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void Joint::Name(char* name)
+void Joint::Name(const char* name)
 {
 	strcpy(this->name, name);
 }

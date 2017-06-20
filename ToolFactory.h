@@ -15,7 +15,7 @@ public:
 	ToolFactory();
 	virtual ~ToolFactory();
 
-	static Tool* CreateTool(char* name);
+    static Tool* CreateTool(const char* name);
 };
 
 #endif

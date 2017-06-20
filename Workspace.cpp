@@ -9,7 +9,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-Workspace::Workspace(char* name)
+Workspace::Workspace(const char* name)
 {
 	Name(name);
 	this->currentModel = 0;
@@ -48,7 +48,7 @@ char* Workspace::Name()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void Workspace::Name(char* name)
+void Workspace::Name(const char* name)
 {
 	strcpy(this->name, name);
 }
@@ -69,7 +69,7 @@ void Workspace::AddModel(Model* model)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-bool Workspace::RemoveModel(char* model)
+bool Workspace::RemoveModel(const char* model)
 {
 	int i = GetModelIndex(model);
 	
@@ -84,7 +84,7 @@ bool Workspace::RemoveModel(char* model)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-Model* Workspace::GetModel(char* model)
+Model* Workspace::GetModel(const char* model)
 {
 	int i = GetModelIndex(model);
 
@@ -99,7 +99,7 @@ Model* Workspace::GetModel(char* model)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-int Workspace::GetModelIndex(char* model)
+int Workspace::GetModelIndex(const char* model)
 {
 	if (model)
 	{
@@ -152,7 +152,7 @@ void Workspace::SetCurrentModel(int index)
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void Workspace::SetCurrentModel(char* model)
+void Workspace::SetCurrentModel(const char* model)
 {
 	if (int index = GetModelIndex(model) >= 0)
 		this->currentModel = this->models[index];

@@ -18,22 +18,22 @@ private:
 
 	void ClearMeshes();
 public:
-	MeshGroup(char* name);
+    MeshGroup(const char* name);
 	virtual ~MeshGroup();
 
-	char* Name();
-	void Name(char* name);
+    const char* Name();
+    void Name(const char* name);
 
 	void AddMesh(Mesh* mesh);
-	bool RemoveMesh(char* mesh);
-	Mesh* GetMesh(char* mesh);
-	int GetMeshIndex(char* mesh);
+    bool RemoveMesh(const char* mesh);
+    Mesh* GetMesh(const char* mesh);
+    int GetMeshIndex(const char* mesh);
 
 	int GetMeshCount();
 	Mesh* GetMesh(int index);
 
 	void SetCurrentMesh(int index);
-	void SetCurrentMesh(char* mesh);
+    void SetCurrentMesh(const char* mesh);
 	Mesh* GetCurrentMesh();
 
 };

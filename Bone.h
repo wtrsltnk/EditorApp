@@ -31,8 +31,8 @@ public:
 	int Parent();
 	void Parent(int parent);
 
-	char* Name();
-	void Name(char* name);
+    const char* Name();
+    void Name(const char* name);
 
 };
 

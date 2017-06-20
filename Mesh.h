@@ -34,11 +34,11 @@ private:
 	void ClearPoints();
 
 public:
-	Mesh(char* name);
+    Mesh(const char* name);
 	virtual ~Mesh();
 
-	char* Name();
-	void Name(char* name);
+    const char* Name();
+    void Name(const char* name);
 
 	void Render(RenderArgs* args);
 	

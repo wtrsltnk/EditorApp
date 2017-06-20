@@ -12,7 +12,7 @@
 SelectionPropertieBox::SelectionPropertieBox()
 {
 	this->m_strClassName = "SelectionPropertieBox";
-	this->m_strTitle = "Selection Properties";
+    strcpy(this->m_strTitle, "Selection Properties");
 	this->m_dwResource = IDD_SELECTION;
 }
 

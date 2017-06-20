@@ -5,6 +5,7 @@
 #include "CameraPropertieBox.h"
 #include "resource.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -13,7 +14,7 @@
 CameraPropertieBox::CameraPropertieBox()
 {
 	this->m_strClassName = "CameraPropertieBox";
-	this->m_strTitle = "Camera Properties";
+    strcpy(this->m_strTitle, "Camera Properties");
 	this->m_dwResource = IDD_CAMERA;
 }
 

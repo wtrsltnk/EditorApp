@@ -17,22 +17,22 @@ private:
 
 	void ClearModels();
 public:
-	Workspace(char* name);
+    Workspace(const char* name);
 	virtual ~Workspace();
 
 	char* Name();
-	void Name(char* name);
+    void Name(const char* name);
 
 	void AddModel(Model* model);
-	bool RemoveModel(char* model);
-	Model* GetModel(char* model);
-	int GetModelIndex(char* model);
+    bool RemoveModel(const char* model);
+    Model* GetModel(const char* model);
+    int GetModelIndex(const char* model);
 
 	int GetModelCount();
 	Model* GetModel(int index);
 
 	void SetCurrentModel(int index);
-	void SetCurrentModel(char* model);
+    void SetCurrentModel(const char* model);
 	Model* GetCurrentModel();
 };
 

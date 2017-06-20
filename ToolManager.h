@@ -29,15 +29,15 @@ private:
 	ToolManager();
 	virtual ~ToolManager();
 
-	int GetToolIndex(char* tool);
-	Tool* GetTool(char* tool);
+    int GetToolIndex(const char* tool);
+    Tool* GetTool(const char* tool);
 	void UnloadCurrent();
 public:
 	void SetToolBoxContainer(CWToolBoxContainer* boxes);
 	void SetArguments(ToolArgs* args);
 
 	int AddTool(Tool* tool);
-	Tool* SetCurrentTool(char* name);
+    Tool* SetCurrentTool(const char* name);
 	void ClearTools();
 	void SetCameraTool(Tool* tool);
 	Tool* GetCameraTool();

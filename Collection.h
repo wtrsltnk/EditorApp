@@ -5,6 +5,8 @@
 #ifndef COLLECTION_H
 #define COLLECTION_H
 
+#include <memory.h>
+
 #define ALLOC_BLOCK_SIZE 4
 
 template <class type>

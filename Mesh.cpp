@@ -13,7 +13,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-Mesh::Mesh(char* name)
+Mesh::Mesh(const char* name)
 {
 	Name(name);
 }
@@ -27,7 +27,7 @@ Mesh::~Mesh()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-char* Mesh::Name()
+const char* Mesh::Name()
 {
 	return this->name;
 }
@@ -37,7 +37,7 @@ char* Mesh::Name()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-void Mesh::Name(char* name)
+void Mesh::Name(const char* name)
 {
 	strcpy(this->name, name);
 }

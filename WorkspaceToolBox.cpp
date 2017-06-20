@@ -63,7 +63,7 @@ LRESULT WorkspaceToolBox::ViewProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 						if (ws)
 						{
 							LPARAM data = this->view->GetItemData(this->view->GetSelectedItem());
-							char* title = this->view->GetItemText(this->view->GetSelectedItem());
+                            const char* title = this->view->GetItemText(this->view->GetSelectedItem());
 
 							switch ((ItemTypes)data)
 							{
@@ -85,7 +85,7 @@ LRESULT WorkspaceToolBox::ViewProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 									HTREEITEM seq = this->view->GetSelectedItem();
 									HTREEITEM seqtitle = this->view->GetParentItem(seq);
 									HTREEITEM mdl = this->view->GetParentItem(seqtitle);
-									char* mdlname = this->view->GetItemText(mdl);
+                                    const char* mdlname = this->view->GetItemText(mdl);
 
 									if (Model* model = ws->GetModel(mdlname))
 									{
@@ -98,16 +98,16 @@ LRESULT WorkspaceToolBox::ViewProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 								{
 									HTREEITEM msh = this->view->GetSelectedItem();
 									HTREEITEM grp = this->view->GetParentItem(msh);
-									char* grpname = this->view->GetItemText(grp);
+                                    const char* grpname = this->view->GetItemText(grp);
 									HTREEITEM grptitle = this->view->GetParentItem(grp);
 									HTREEITEM mdl = this->view->GetParentItem(grptitle);
-									char* mdlname = this->view->GetItemText(mdl);
+                                    const char* mdlname = this->view->GetItemText(mdl);
 
 									if (Model* model = ws->GetModel(mdlname))
 									{
 										if (MeshGroup* meshgroup = model->GetMeshGroup(grpname))
 										{
-											char* mesh = this->view->GetItemText(msh);
+                                            const char* mesh = this->view->GetItemText(msh);
 											meshgroup->SetCurrentMesh(mesh);
 											this->document->Render();
 										}
@@ -170,6 +170,7 @@ CWPopUpMenu* WorkspaceToolBox::GetMenu()
 //////////////////////////////////////////////////////////////////////
 void WorkspaceToolBox::InitView()
 {
+    static char TMP_STR[1024] = { 0 };
 	this->view->ClearItems();
 
 	Workspace* ws = this->document->GetWorkspace();
@@ -180,7 +181,8 @@ void WorkspaceToolBox::InitView()
 		for (int i = 0; i < ws->GetModelCount(); i++)
 		{
 			Model* model = ws->GetModel(i);
-			HTREEITEM mdl = this->view->AddItem(model->Name(), wst, 0, 0, (LPARAM)eModel);
+            strcpy(TMP_STR, model->Name());
+            HTREEITEM mdl = this->view->AddItem(TMP_STR, wst, 0, 0, (LPARAM)eModel);
 
 			if (Skeleton* skeleton = model->GetSkeleton())
 			{
@@ -198,12 +200,14 @@ void WorkspaceToolBox::InitView()
 			for (int j = 0; j < model->GetMeshGroupCount(); j++)
 			{
 				MeshGroup* meshgroup = model->GetMeshGroup(j);
-				HTREEITEM mgn = this->view->AddItem(meshgroup->Name(), mg, 0, 0, (LPARAM)eMeshGroup);
+                strcpy(TMP_STR, meshgroup->Name());
+                HTREEITEM mgn = this->view->AddItem(TMP_STR, mg, 0, 0, (LPARAM)eMeshGroup);
 
 				for (int jj = 0; jj < meshgroup->GetMeshCount(); jj++)
 				{
 					Mesh* mesh = meshgroup->GetMesh(jj);
-					this->view->AddItem(mesh->Name(), mgn, 0, 0, (LPARAM)eMesh);
+                    strcpy(TMP_STR, mesh->Name());
+                    this->view->AddItem(TMP_STR, mgn, 0, 0, (LPARAM)eMesh);
 				}
 			}
 			this->view->Expand(mg);
@@ -212,7 +216,8 @@ void WorkspaceToolBox::InitView()
 			for (int k = 0; k < model->GetSequenceCount(); k++)
 			{
 				Sequence* sequence = model->GetSequence(k);
-				HTREEITEM sqn = this->view->AddItem(sequence->Name(), seq, 0, 0, (LPARAM)eSequence);
+                strcpy(TMP_STR, sequence->Name());
+                HTREEITEM sqn = this->view->AddItem(TMP_STR, seq, 0, 0, (LPARAM)eSequence);
 			}
 			this->view->Expand(seq);
 

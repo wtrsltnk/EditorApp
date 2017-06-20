@@ -241,7 +241,7 @@ bool CameraTool::Unload()
 // Input   : 
 // Output  : 
 //////////////////////////////////////////////////////////////////////
-char* CameraTool::GetName()
+const char* CameraTool::GetName()
 {
 	return CAMERA_TOOL;
 }
