@@ -37,6 +37,7 @@ target_link_libraries(Engine
     )
 
 set(SRC_APP
+    README.md
     Bone.cpp
     Bone.h
     CameraPropertieBox.cpp
