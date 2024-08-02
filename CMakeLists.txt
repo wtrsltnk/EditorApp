@@ -36,7 +36,7 @@ target_link_libraries(Engine
     MathLib
     )
 
-set(SRC_APP
+add_executable(EditorApp WIN32
     README.md
     Bone.cpp
     Bone.h
@@ -105,10 +105,6 @@ set(SRC_APP
     Workspace.h
     WorkspaceToolBox.cpp
     WorkspaceToolBox.h
-    )
-
-add_executable(EditorApp
-    ${SRC_APP}
     )
 
 add_subdirectory(ControlLib)

@@ -48,7 +48,7 @@ private:
 
 	void InitPropertieWindow();
 public:
-	MainForm();
+    MainForm(HINSTANCE hInstance);
 	virtual ~MainForm();
 
 	LRESULT ViewProc(UINT uMsg, WPARAM wParam, LPARAM lParam);

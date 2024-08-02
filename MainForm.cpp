@@ -11,9 +11,9 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	MainForm app;
+    MainForm app(hInstance);
 
-	if (!app.Init(hInstance))
+    if (!app.Init())
 	{
 		::MessageBox(NULL, "Unable to create Form", "ERROR :", MB_OK | MB_ICONEXCLAMATION);
 		return 0;
@@ -26,7 +26,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-MainForm::MainForm()
+MainForm::MainForm(
+    HINSTANCE hInstance)
+    : CWBaseApp(hInstance)
 {
 	this->m_strWindowClass		 = "MainForm";
 	this->m_dwExWindowStyle		 = WS_EX_WINDOWEDGE;
